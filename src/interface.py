@@ -11,14 +11,14 @@ class InterfaceGrafica:
     def __init__(self, root):
         self.root = root
         self.root.title("Harmless Company")
-        self.total_weight = 0
+
         self.custom_font = ("Perfect DOS VGA 437", 12)
-        self.junk_listbox = tk.Listbox(
-            self.root, width=50, height=15, font=self.custom_font
-        )
+
         self.backpack_items = []
         self.backpack_item_ids = {}
         
+        self.total_value = 0
+        self.total_weight = 0
         self.MAX_WEIGHT = 45  # Peso maximo na mochila
 
         self.create_widgets()
@@ -51,7 +51,7 @@ class InterfaceGrafica:
     def add_to_backpack(self, item):
         if self.total_weight + item.weight <= self.MAX_WEIGHT:
             self.total_weight += item.weight
-            self.total_backpack += item.value
+            self.total_value += item.value
             self.backpack_contents.insert(tk.END, str(item))
             self.backpack_items.append(item)
         
@@ -74,7 +74,7 @@ class InterfaceGrafica:
             item = self.backpack_items.pop(selected_index)
             self.backpack_contents.delete(selected_index)
             self.total_weight -= item.weight
-            self.total_backpack -= item.value
+            self.total_value -= item.value
             self.update_weight_label()
             self.update_value_label()
 
@@ -97,7 +97,7 @@ class InterfaceGrafica:
         )
 
     def update_value_label(self):
-        self.value_label.config(text=f"Total Value in Backpack: ${self.total_backpack}")
+        self.value_label.config(text=f"Total Value in Backpack: ${self.total_value}")
 
     def calculate_total_value(self, items):
         return sum(item.value for item in items)
@@ -145,16 +145,14 @@ class InterfaceGrafica:
         )
         knapsack_button.pack(side="left", fill="both", expand=True, pady=5, padx=5)
 
-        self.total_weight = 0
         self.weight_label = tk.Label(
             self.root,
             text=f"Current Weight: {self.total_weight}Kg / {self.MAX_WEIGHT}Kg",
         )
         self.weight_label.pack(pady=5)
 
-        self.total_backpack = 0
         self.value_label = tk.Label(
-            self.root, text=f"Current Value: ${self.total_backpack}"
+            self.root, text=f"Current Value: ${self.total_value}"
         )
         self.value_label.pack(pady=5)
 
