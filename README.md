@@ -1,6 +1,6 @@
 # Harmless Company
 
-[Vídeo de apresentação](https://youtu.be/ihqoDbjzobE)
+[Vídeo de apresentação](https://youtu.be/Q9QXOvSc5lc)
 
 **Número da Lista**: 1<br>
 **Conteúdo da Disciplina**: Programação Dinâmica<br>
