@@ -1,15 +1,21 @@
 import json
+import os
 import random
 from junk.junk import Junk
 
 def junk_list():
-    with open("./junk/junk.json", "r+") as a:
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    os.chdir(script_dir)
+
+    file = "junk.json"
+    file_path = os.path.join(file)
+    absolute_path = os.path.abspath(file_path)
+
+    with open(absolute_path, "r+") as a:
         items = json.load(a)
 
-    random_num = random.randint(1, len(items)) # quantidade x random
-
     # Selecionar aleatoriamente essa quantidade x de itens
-    random_items= random.choices(items, k=random_num)
+    random_items= random.sample(items, k=10)
 
     junk_items = []
     for item in random_items:

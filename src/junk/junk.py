@@ -11,5 +11,11 @@ class Junk:
 
         self.weight = weight
 
+    def get_value(self):
+        return self.value
+
+    def get_weight(self):
+        return self.weight
+
     def __str__(self) -> str:
-        return f"{self.name:20} - ${self.value} - {self.weight}Kg"
+        return f"{self.name:20} +${self.value:<6} -{self.weight}Kg"

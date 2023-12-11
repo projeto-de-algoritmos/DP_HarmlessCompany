@@ -34,11 +34,7 @@
   { "Scrap Name": "Rubber Ducky", "Value Range": [2, 98], "Weight": 1 },
   { "Scrap Name": "Steering Wheel", "Value Range": [16, 32], "Weight": 12 },
   { "Scrap Name": "Stop Sign", "Value Range": [20, 48], "Weight": 15 },
-  {
-    "Scrap Name": "Tattered Metal Sheet",
-    "Value Range": [10, 22],
-    "Weight": 15
-  },
+  { "Scrap Name": "Tattered Metal Sheet", "Value Range": [10, 22], "Weight": 15 },
   { "Scrap Name": "Tea Kettle", "Value Range": [32, 56], "Weight": 1 },
   { "Scrap Name": "Teeth", "Value Range": [60, 84], "Weight": 1 },
   { "Scrap Name": "Toothpaste", "Value Range": [16, 48], "Weight": 2 },
